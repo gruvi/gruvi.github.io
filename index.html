@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>FB share tests</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '706843062794819',
+        xfbml      : true,
+        version    : 'v2.3'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "http://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="share">
+        <h2>Share Dialog</h2>
+        <p><a href="https://developers.facebook.com/docs/sharing/reference/share-dialog" target="_blank">Official documentation</a></p>
+        <form>
+          <div class="form-group">
+            <label for="href">href</label>
+            <input type="text" class="form-control" id="href">
+          </div>
+          <div class="form-group">
+            <label for="redirect_uri">redirect_uri</label>
+            <input type="text" class="form-control" id="redirect_uri">
+          </div>
+          <div class="form-group">
+            <label for="display">display</label>
+            <select class="form-control" id="display">
+              <option>popup</option>
+              <option>page</option>
+              <option>iframe</option>
+              <option>dialog</option>
+              <option>touch</option>
+              <option>async</option>
+              <option>hidden</option>
+              <option>none</option>
+            </select>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> URL Redirection
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Share</button>
+        </form>
+      </div>
+      <div class="col-md-6" id="feed">
+        <h2>Feed Dialog</h2>
+        <p><a href="https://developers.facebook.com/docs/sharing/reference/feed-dialog" target="_blank">Official documentation</a></p>
+        <form>
+          <div class="form-group">
+            <label for="link">link</label>
+            <input type="text" class="form-control" id="link">
+          </div>
+          <div class="form-group">
+            <label for="redirect_uri">redirect_uri</label>
+            <input type="text" class="form-control" id="redirect_uri">
+          </div>
+          <div class="form-group">
+            <label for="picture">picture</label>
+            <input type="text" class="form-control" id="picture">
+          </div>
+          <div class="form-group">
+            <label for="source">source</label>
+            <input type="text" class="form-control" id="source">
+          </div>
+          <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="caption">caption</label>
+            <input type="text" class="form-control" id="caption">
+          </div>
+          <div class="form-group">
+            <label for="description">description</label>
+            <input type="text" class="form-control" id="description">
+          </div>
+          <div class="form-group">
+            <label for="properties">properties</label>
+            <input type="text" class="form-control" id="properties">
+            <span class="help-block">
+              {"Premiere" : "November 14"}
+              <br>
+              {"thing" : {"text" : "Buy tickets!", "href" : "http://google.com"}}
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="actions">actions</label>
+            <input type="text" class="form-control" id="actions">
+            <span class="help-block">[{"name":"Buy tickets!","link":"http://google.com"}]</span>
+          </div>
+          <div class="form-group">
+            <label for="display">display</label>
+            <select class="form-control" id="display">
+              <option>popup</option>
+              <option>page</option>
+              <option>iframe</option>
+              <option>dialog</option>
+              <option>touch</option>
+              <option>async</option>
+              <option>hidden</option>
+              <option>none</option>
+            </select>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> URL Redirection
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
+  <script src="share.js"></script>
+</body>
+</html>
